@@ -1,5 +1,3 @@
-"use client"
-
 import { useRef } from "react";
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import {
@@ -8,7 +6,7 @@ import {
   useSelector,
   Provider,
 } from "react-redux";
-import { globalSlice } from "./state";
+import globalReducer from "./state";
 import { api } from "./state/api";
 import { setupListeners } from "@reduxjs/toolkit/query";
 
@@ -51,7 +49,7 @@ const persistConfig = {
   whitelist: ["global"],
 };
 const rootReducer = combineReducers({
-  global: globalSlice.reducer,
+  global: globalReducer,
   [api.reducerPath]: api.reducer,
 });
 const persistedReducer = persistReducer(persistConfig, rootReducer);
@@ -82,7 +80,8 @@ export default function StoreProvider({
 }: {
   children: React.ReactNode;
 }) {
-  const storeRef = useRef<AppStore | null>(null);
+ const storeRef = useRef<AppStore | null>(null);
+
   if (!storeRef.current) {
     storeRef.current = makeStore();
     setupListeners(storeRef.current.dispatch);

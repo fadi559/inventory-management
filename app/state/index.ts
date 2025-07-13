@@ -10,6 +10,7 @@ const initialState: InitialStateTypes = {
   isDarkMode: false,
 };
 
+
 export const globalSlice = createSlice({
   name: "global",
   initialState,
