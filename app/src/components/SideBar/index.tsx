@@ -106,13 +106,13 @@ const sidebarClassNames = `fixed flex flex-col ${
       {/*links*/}
       <div className="flex-grow mt-8">
         <SideBarLink
-          href="/app/src/dashboard/page.tsx"
+          href="/Dashboard"
           icon={Layout}
           label="Dashboard"
           isCollapsed={isSidebarCollapsed}
         />
         <SideBarLink
-          href="/app/src/inventory/page.tsx"
+          href="/inventory"
           icon={Archive}
           label="Inventory"
           isCollapsed={isSidebarCollapsed}
