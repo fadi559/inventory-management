@@ -118,7 +118,7 @@ const sidebarClassNames = `fixed flex flex-col ${
           isCollapsed={isSidebarCollapsed}
         />
         <SideBarLink
-          href="/products"
+          href="/Products"
           icon={Clipboard}
           label="Products"
           isCollapsed={isSidebarCollapsed}
@@ -130,7 +130,7 @@ const sidebarClassNames = `fixed flex flex-col ${
           isCollapsed={isSidebarCollapsed}
         />
         <SideBarLink
-          href="/settings"
+          href="/Settings"
           icon={SlidersHorizontal}
           label="Settings"
           isCollapsed={isSidebarCollapsed}

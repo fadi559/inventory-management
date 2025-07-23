@@ -92,13 +92,26 @@ export const api = createApi({
       }),
       invalidatesTags: ["Products"],
     }),
+    
+    getUsers: build.query<User[], void>({
+    query: () => "/users",
+    providesTags:["Users"],
+}),
+  getExpensesByCategory: build.query<ExpenseByCategorySummary[], void>({
+      query: () => "/expenses",
+      providesTags: ["Expenses"],
+    }), 
   })
+  
 })
 
 
 
-export const { useGetDashboardMetricsQuery,
+export const { 
+  useGetDashboardMetricsQuery,
    useGetProductsQuery,
-   useCreateProductMutation
+   useCreateProductMutation,
+   useGetUsersQuery,
+   useGetExpensesByCategoryQuery,
   
   }=api;
